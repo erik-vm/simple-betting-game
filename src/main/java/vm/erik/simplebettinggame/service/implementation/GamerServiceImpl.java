@@ -69,8 +69,7 @@ public class GamerServiceImpl implements GameService {
         if (chosenNumber == 100){
             return bet;
         }
-      //  return bet * (99.0 / (100 - chosenNumber));
-        return bet * (100.0 / chosenNumber);
+        return bet * (99.0 / (100 - chosenNumber));
     }
 
     private int getGameRandomNumber() {

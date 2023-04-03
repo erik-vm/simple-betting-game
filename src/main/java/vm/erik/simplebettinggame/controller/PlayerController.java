@@ -1,11 +1,11 @@
 package vm.erik.simplebettinggame.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import vm.erik.simplebettinggame.dto.PlayerDTO;
 import vm.erik.simplebettinggame.service.PlayerService;
+
+import static org.springframework.http.HttpStatus.*;
 
 /**
  * @author Erik Vainumäe
@@ -24,6 +24,7 @@ public class PlayerController {
     }
 
     @PostMapping
+    @ResponseStatus(CREATED)
     public PlayerDTO savePlayer(@RequestBody PlayerDTO playerDTO){
         return playerService.saveNewPlayer(playerDTO);
     }
